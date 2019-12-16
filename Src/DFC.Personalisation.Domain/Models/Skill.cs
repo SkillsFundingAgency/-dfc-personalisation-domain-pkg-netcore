@@ -2,11 +2,10 @@
 {
     public class Skill
     {
-        public string Name { get; private set; }
-
-        public Skill(string name)
-        {
-            this.Name = name;
-        }
+        public string skillType { get; set; }
+        public string skill { get; set; }
+        public string[] alternativeLabels { get; set; }
+        public string uri { get; set; }
     }
 }
+
