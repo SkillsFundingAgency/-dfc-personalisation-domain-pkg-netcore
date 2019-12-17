@@ -10,7 +10,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
         [Test]
         public void When_SkillCreated_Then_NameShouldHaveValue()
         {
-            var s = new Skill("perform upholstery repair");
+            var s = new STSkill("perform upholstery repair");
 
             s.Name.Should().Be("perform upholstery repair");
         }
