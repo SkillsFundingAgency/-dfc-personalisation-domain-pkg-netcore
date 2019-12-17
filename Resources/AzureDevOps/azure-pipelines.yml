@@ -1,5 +1,5 @@
 variables:
-    SolutionBaseName: '__SolutionBaseName__'
+    SolutionBaseName: 'DFC.Personalisation.Domain'
     BuildPlatform: 'any cpu'
     BuildConfiguration: 'release'
 
@@ -9,7 +9,7 @@ resources:
   - repository: dfc-devops
     type: github
     name: SkillsFundingAgency/dfc-devops
-    ref: refs/tags/v1.8.5
+    ref: refs/tags/v1.8.6
     endpoint: 'GitHub (ESFA)'
 
 stages:
@@ -28,3 +28,30 @@ stages:
         SolutionBaseName: $(SolutionBaseName)
         BuildPlatform: 'any cpu'
         BuildConfiguration: 'release'
+    - template: AzureDevOpsTemplates\Build\StepTemplates\dfc-dotnetcore-nuget-pack.yml@dfc-devops
+      parameters:
+        SolutionBaseName: $(SolutionBaseName)
+
+- stage: PublishPackage
+  displayName: Publish Package to NuGet
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  jobs:
+  - deployment: PublishNugetPackage
+    environment: PERSONALISATION_NUGET
+    pool:
+      name: NCS - CI and CD
+      demands:
+      - msbuild
+      - visualstudio
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: NuGetCommand@2
+            displayName: 'NuGet push'
+            inputs:
+              command: push
+              packagesToPush: '$(Pipeline.Workspace)\$(SolutionBaseName).Nuget\*.nupkg;!$(Pipeline.Workspace)\$(SolutionBaseName).Nuget\*.symbols.nupkg'
+              nuGetFeedType: external
+              publishFeedCredentials: 'DFC Nuget'
+
