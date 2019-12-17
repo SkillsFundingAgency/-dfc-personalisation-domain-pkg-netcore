@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-
+    <ProjectGuid>81445B57-EE7C-4A2F-B0BC-759077359727</ProjectGuid>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\DFC.Personalisation.Domain\DFC.Personalisation.Domain.csproj" />
+    <ProjectReference Include="..\DFC.Personalisation.Domain\DFC.Personalisation.Domain.csproj" />
   </ItemGroup>
 
 </Project>
