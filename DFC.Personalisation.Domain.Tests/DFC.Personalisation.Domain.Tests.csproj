@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\DFC.Personalisation.Domain\DFC.Personalisation.Domain.csproj" />
+    <ProjectReference Include="..\Src\DFC.Personalisation.Domain\DFC.Personalisation.Domain.csproj" />
   </ItemGroup>
 
 </Project>
