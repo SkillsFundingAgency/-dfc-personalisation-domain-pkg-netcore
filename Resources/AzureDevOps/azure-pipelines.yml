@@ -1,5 +1,5 @@
 variables:
-    SolutionBaseName: '__SolutionBaseName__'
+    SolutionBaseName: 'DFC.Personalisation.Domain'
     BuildPlatform: 'any cpu'
     BuildConfiguration: 'release'
 
