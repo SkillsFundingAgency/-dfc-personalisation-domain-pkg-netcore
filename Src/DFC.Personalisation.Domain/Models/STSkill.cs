@@ -6,6 +6,11 @@
         public string Skill { get; set; }
         public string[] AlternativeLabels { get; set; }
         public string Uri { get; set; }
+
+        public STSkill(string skill)
+        {
+            this.Skill = skill;
+        }
     }
 }
 

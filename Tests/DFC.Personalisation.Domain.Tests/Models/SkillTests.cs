@@ -12,7 +12,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
         {
             var s = new STSkill("perform upholstery repair");
 
-            s.Name.Should().Be("perform upholstery repair");
+            s.Skill.Should().Be("perform upholstery repair");
         }
     }
 }
