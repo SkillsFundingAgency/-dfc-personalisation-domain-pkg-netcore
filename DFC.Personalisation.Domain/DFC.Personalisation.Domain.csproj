@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <ProjectGuid>EFAEE951-543F-46A0-BF97-149A1D119DD8</ProjectGuid>
+    <ProjectGuid>{81445B57-EE7C-4A2F-B0BC-759077359727}</ProjectGuid>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
