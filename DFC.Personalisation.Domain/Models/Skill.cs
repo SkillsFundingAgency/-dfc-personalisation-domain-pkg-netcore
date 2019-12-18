@@ -21,20 +21,14 @@ namespace DFC.Personalisation.Domain.Models
         }
 
         public Skill(string id, string name, SkillType skillType, string[] alternativeNames)
+            :this(id,name,skillType)
         {
-            if (string.IsNullOrWhiteSpace((id)))
-                throw new ArgumentNullException(nameof(id), "Id must be specified.");
-            if (string.IsNullOrWhiteSpace((name)))
-                throw new ArgumentNullException(nameof(name), "Skill name must be specified.");
             if (null == alternativeNames || 0 == alternativeNames.Length)
                 throw new ArgumentNullException(nameof(alternativeNames), "Alternative names must be specified.");
             foreach (var alternativeName in alternativeNames)
             {
                 if(string.IsNullOrWhiteSpace(alternativeName)) throw new ArgumentNullException(nameof(alternativeNames), "Missing or empty value in alternativeNames array.");
             }
-            this.Id = id;
-            this.Name = name;
-            this.SkillType = skillType;
             AlternativeNames = (string[])alternativeNames.Clone();
         }
     }
