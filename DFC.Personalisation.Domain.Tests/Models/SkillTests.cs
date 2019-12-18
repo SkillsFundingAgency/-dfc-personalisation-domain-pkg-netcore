@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DFC.Personalisation.Domain.Models;
 using FluentAssertions;
 using NUnit.Framework;

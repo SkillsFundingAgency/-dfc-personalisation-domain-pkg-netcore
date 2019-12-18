@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DFC.Personalisation.Domain.Models
 {
@@ -33,4 +33,3 @@ namespace DFC.Personalisation.Domain.Models
         }
     }
 }
-
