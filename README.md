@@ -1,26 +1,9 @@
-# Project template repository
+# dfc-personalisation-domain-pkg-netcore
 
-This directory contains a "template repo" for creating new repositories from
+A Nuget package for shared/re-usable enterprise-wide business models with logic. 
 
-When using this,  please run
+## Build & Deployment Piplelines
 
-`Scripts\New-InitialDotNetCoreProjects.ps1 -Prefix <project name> -ProjectType <project type>`
-
-to create the project structure and correctly populate the project guids in the csproj files.
-
-Supported project types are currently:
-
-* web
-* console
-* classlib
-* function
-
-Then delete this section, and remove the Scripts folder from the repo.
-
-Then it can be PR'd into the appropriate branch
-
-# SomeProjectName
-
-## Introduction
-
-An introduction to the project goes here!
+| | Dev | Master
+--- | --- | ---
+Build | [![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_apis/build/status/Personalisation/dfc-personalisation-domain-pkg-netcore?branchName=dev)](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build/latest?definitionId=1943&branchName=dev) |   [![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_apis/build/status/Personalisation/dfc-personalisation-domain-pkg-netcore?branchName=master)](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build/latest?definitionId=1943&branchName=master)    |
