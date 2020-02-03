@@ -7,6 +7,8 @@ namespace DFC.Personalisation.Domain.Models
         public string Id { get; private set; } // unique Uri for the Skill
         public string Name { get; private set; }
         public SkillType SkillType { get; private set; }
+        public RelationshipType RelationshipType { get; private set; }
+        
         public string[] AlternativeNames { get; private set; }
 
         public Skill(string id, string name, SkillType skillType)
@@ -30,6 +32,17 @@ namespace DFC.Personalisation.Domain.Models
                 if(string.IsNullOrWhiteSpace(alternativeName)) throw new ArgumentNullException(nameof(alternativeNames), "Missing or empty value in alternativeNames array.");
             }
             AlternativeNames = (string[])alternativeNames.Clone();
+        }
+
+        public Skill(string id, string name, SkillType skillType, string[] alternativeNames,RelationshipType relationshipType)
+            :this(id,name,skillType,alternativeNames)
+        {
+            this.RelationshipType = relationshipType;
+        }
+        public Skill(string id, string name, SkillType skillType,RelationshipType relationshipType)
+            :this(id,name,skillType)
+        {
+            this.RelationshipType = relationshipType;
         }
     }
 }

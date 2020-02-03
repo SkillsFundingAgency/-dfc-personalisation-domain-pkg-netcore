@@ -13,4 +13,10 @@
         SectorSpecific,
         OccupationSpecific,
     }
+
+    public enum RelationshipType
+    {
+        Essential,
+        Optional
+    }
 }
