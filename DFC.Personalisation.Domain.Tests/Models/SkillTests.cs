@@ -19,7 +19,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "";
                 string name = "perform upholstery repair";
                 SkillType skillType = SkillType.Competency;
-
+                
                 // Act
                 Action act = () => new Skill(id, name, skillType);
 
@@ -36,6 +36,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/skill/ca99a4f9-4ead-4d17-a430-dda2cd6fb5ed";
                 string name = "";
                 SkillType skillType = SkillType.Competency;
+                RelationshipType relationshipType = RelationshipType.Essential;
 
                 // Act
                 Action act = () => new Skill(id, name, skillType);
