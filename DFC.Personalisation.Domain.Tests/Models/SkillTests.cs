@@ -39,7 +39,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 RelationshipType relationshipType = RelationshipType.Essential;
 
                 // Act
-                Action act = () => new Skill(id, name, skillType);
+                Action act = () => new Skill(id, name, skillType,relationshipType);
 
                 // Assert
 
