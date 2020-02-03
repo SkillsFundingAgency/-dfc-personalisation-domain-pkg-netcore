@@ -84,7 +84,26 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 act.Should().Throw<ArgumentNullException>().And.Message.Should().Be("Missing or empty value in alternativeNames array. (Parameter 'alternativeNames')");
             }
 
-           
+            [Test]
+            public void When_Skill_CreatedWithRelationshipType_Then_RelationshipType_MustNotHaveMissingValues()
+            {
+                // Arrange
+
+                string id = "http://data.europa.eu/esco/skill/ca99a4f9-4ead-4d17-a430-dda2cd6fb5ed";
+                string name = "perform upholstery repair";
+                SkillType skillType = SkillType.Competency;
+                RelationshipType relationshipType = RelationshipType.Essential;
+
+
+                // Act
+
+                var sut  = new Skill(id, name, skillType, relationshipType);
+
+                // Assert
+                sut.RelationshipType.Should().Be(RelationshipType.Essential);
+
+            }
+
         }
 
         [TestFixture]
