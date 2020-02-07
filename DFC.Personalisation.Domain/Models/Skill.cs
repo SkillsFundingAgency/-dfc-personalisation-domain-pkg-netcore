@@ -11,6 +11,15 @@ namespace DFC.Personalisation.Domain.Models
         
         public string[] AlternativeNames { get; private set; }
 
+        public Skill(string id, string name)
+        {
+            if (string.IsNullOrWhiteSpace((id)))
+                throw new ArgumentNullException(nameof(id), "Id must be specified.");
+            if (string.IsNullOrWhiteSpace((name)))
+                throw new ArgumentNullException(nameof(name), "Skill name must be specified.");
+            this.Id = id;
+            this.Name = name;
+        }
         public Skill(string id, string name, SkillType skillType)
         {
             if (string.IsNullOrWhiteSpace((id)))

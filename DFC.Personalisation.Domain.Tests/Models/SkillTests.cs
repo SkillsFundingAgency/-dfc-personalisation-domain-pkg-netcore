@@ -103,6 +103,23 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 sut.RelationshipType.Should().Be(RelationshipType.Essential);
 
             }
+            [Test]
+            public void When_Skill_CreatedWithIdAndName_Then_Skill_Created()
+            {
+                // Arrange
+
+                string id = "http://data.europa.eu/esco/skill/ca99a4f9-4ead-4d17-a430-dda2cd6fb5ed";
+                string name = "perform upholstery repair";
+                
+
+                // Act
+
+                var sut  = new Skill(id, name);
+
+                // Assert
+                sut.Name.Should().Be("perform upholstery repair");
+
+            }
 
         }
 
