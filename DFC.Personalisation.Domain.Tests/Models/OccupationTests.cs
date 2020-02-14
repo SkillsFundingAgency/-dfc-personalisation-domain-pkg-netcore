@@ -139,5 +139,59 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 occupation.LastModified.Should().Be(18.December(2019).At(15,00,00));
             }
         }
+        [TestFixture]
+        public class GetHashCode
+        {
+            [Test]
+            public void When_SkillCreated_Then_HashCodeShouldBeIdHashCode()
+            {
+                // Arrange
+                string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
+                string name = "furniture upholsterer";
+                DateTime lastModified = DateTime.UtcNow;
+                var occupation = new Occupation(id, name, lastModified);
+
+                // Assert
+                occupation.GetHashCode().Should().Be(id.GetHashCode());
+            }
+        }
+
+        [TestFixture]
+        public class Equals
+        {
+            [Test]
+            public void When_SkillsHaveSameId_Then_TheyAreEqual()
+            {
+                // Arrange
+                string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
+                string name = "furniture upholsterer";
+                DateTime lastModified = DateTime.UtcNow;
+                var occupation = new Occupation(id, "furniture upholsterer", lastModified);
+                var occupation2 = new Occupation(id, "furniture upholsterer part deux", lastModified);
+
+                // Act
+                var isEqual = occupation.Equals(occupation2);
+
+                // Assert
+                isEqual.Should().BeTrue();
+            }
+
+            [Test]
+            public void When_SkillsHaveDifferentId_Then_TheyAreNotEqual()
+            {
+                // Arrange
+                string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
+                string id2 = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2asec5";
+                DateTime lastModified = DateTime.UtcNow;
+                var occupation = new Occupation(id, "furniture upholsterer", lastModified);
+                var occupation2 = new Occupation(id2, "furniture upholsterer part deux", lastModified);
+
+                // Act
+                var isEqual = occupation.Equals(occupation2);
+
+                // Assert
+                isEqual.Should().BeFalse();
+            }
+        }
     }
 }
