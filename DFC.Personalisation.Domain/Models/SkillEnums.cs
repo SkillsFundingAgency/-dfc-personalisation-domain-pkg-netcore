@@ -4,6 +4,7 @@
     {
         Knowledge,
         Competency,
+        Unknown
     }
 
     public enum SkillReusability
@@ -11,7 +12,7 @@
         Transversal,
         CrossSectoral,
         SectorSpecific,
-        OccupationSpecific,
+        OccupationSpecific
     }
 
     public enum RelationshipType

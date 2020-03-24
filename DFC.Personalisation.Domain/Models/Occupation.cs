@@ -32,5 +32,16 @@ namespace DFC.Personalisation.Domain.Models
             }
             AlternativeNames = (string[])alternativeNames.Clone();
         }
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (null == obj) return false;
+            if (!(obj is Occupation)) return false;
+            return ((Occupation) obj).Id.Equals(this.Id);
+        }
     }
 }
