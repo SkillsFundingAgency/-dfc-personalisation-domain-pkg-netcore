@@ -22,7 +22,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 DateTime lastModified = DateTime.UtcNow;
 
                 // Act
-                Action act = () => new Occupation(id, name, lastModified);
+                Action act = () => new Occupation(id, name, lastModified, "test");
 
                 // Assert
 
@@ -39,7 +39,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 DateTime lastModified = DateTime.UtcNow;
 
                 // Act
-                Action act = () => new Occupation(id, name, lastModified);
+                Action act = () => new Occupation(id, name, lastModified, "test");
 
                 // Assert
 
@@ -58,7 +58,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string name = "furniture upholsterer";
                 DateTime lastModified = DateTime.UtcNow;
-                var occupation = new Occupation(id, name, lastModified);
+                var occupation = new Occupation(id, name, lastModified, "test");
 
                 // Act
 
@@ -82,7 +82,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string name = "furniture upholsterer";
                 DateTime lastModified = DateTime.UtcNow;
                 string[] alternateNames = new string[] { "chair builder", "craftsman upholster" };
-                var occupation = new Occupation(id, name, lastModified, alternateNames);
+                var occupation = new Occupation(id, name, lastModified, alternateNames, "test");
 
                 // Act
 
@@ -105,7 +105,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string name = "furniture upholsterer";
                 DateTime lastModified = DateTime.UtcNow;
-                var occupation = new Occupation(id, name, lastModified);
+                var occupation = new Occupation(id, name, lastModified, "test");
 
                 // Act
 
@@ -128,7 +128,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string name = "furniture upholsterer";
                 DateTime lastModified = new DateTime(2019, 12, 18, 15,00,00);
-                var occupation = new Occupation(id, name, lastModified);
+                var occupation = new Occupation(id, name, lastModified, "test");
 
                 // Act
 
@@ -149,7 +149,7 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string name = "furniture upholsterer";
                 DateTime lastModified = DateTime.UtcNow;
-                var occupation = new Occupation(id, name, lastModified);
+                var occupation = new Occupation(id, name, lastModified, "test");
 
                 // Assert
                 occupation.GetHashCode().Should().Be(id.GetHashCode());
@@ -166,8 +166,8 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string name = "furniture upholsterer";
                 DateTime lastModified = DateTime.UtcNow;
-                var occupation = new Occupation(id, "furniture upholsterer", lastModified);
-                var occupation2 = new Occupation(id, "furniture upholsterer part deux", lastModified);
+                var occupation = new Occupation(id, "furniture upholsterer", lastModified, "test");
+                var occupation2 = new Occupation(id, "furniture upholsterer part deux", lastModified, "test");
 
                 // Act
                 var isEqual = occupation.Equals(occupation2);
@@ -183,8 +183,8 @@ namespace DFC.Personalisation.Domain.Tests.Models
                 string id = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2afec5";
                 string id2 = "http://data.europa.eu/esco/occupation/cd3f5356-a16f-4aca-9d4b-ceba2b2asec5";
                 DateTime lastModified = DateTime.UtcNow;
-                var occupation = new Occupation(id, "furniture upholsterer", lastModified);
-                var occupation2 = new Occupation(id2, "furniture upholsterer part deux", lastModified);
+                var occupation = new Occupation(id, "furniture upholsterer", lastModified, "test");
+                var occupation2 = new Occupation(id2, "furniture upholsterer part deux", lastModified, "test");
 
                 // Act
                 var isEqual = occupation.Equals(occupation2);
